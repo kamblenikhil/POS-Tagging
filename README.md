@@ -37,8 +37,13 @@ return posterior_probability
 <br>
 
 <h3> 2. HMM (Viterbi)</h3>
-_How the program works and Description_ - We implemented Viterbi to find the most probable sequence of POS tags for the each given sentence in test file. The training file was used to calculate the emission and transition probabilities. Emission probablities were the probability of the observed word in the sentence given the POS tag. And this was done for each POS tag for an observed word. Transition probabilities were the probability of a POS tag being the next in sequence given the previous POS tag. Initial probabilities were the probability that the POS tag occurs at the beginning of the sentence. We then used all this probabilities to get the viterbi table and then backtracked to find the best optimal sequence of POS tags for a given sentence. We then calculated posterior for HMM such that it's P(S(1)) {P(S(2)|S(1))P(S(3)|S(2))…P(S(n)|S(n-1))} {P(W(1)|S(1))…P(W(n)|S(n))} where S is the state which in our case is the identified POS tag and W is the word in the sentence. <br />
-_Design Decisions_ - We used 3 different dictionaries to store emission, transition and initial probabilities. We also used list of dictionaries to store the values of viterbi table that are calculated using dynamic programming approach. Then we backtracked on the table and returned the list of sequence of POS tags for each sentence <br />
+<b> Working - </b> We implemented Viterbi to find the most probable sequence of POS tags for the each given sentence in test file. The training file was used to calculate the emission and transition probabilities. <br>
+<ul><li>Emission probablities were the probability of the observed word in the sentence given the POS tag. And this was done for each POS tag for an observed word. </li>
+<li>Transition probabilities were the probability of a POS tag being the next in sequence given the previous POS tag. </li>
+<li>Initial probabilities were the probability that the POS tag occurs at the beginning of the sentence. </li></ul>
+We then used all this probabilities to get the viterbi table and then backtracked to find the best optimal sequence of POS tags for a given sentence. We then calculated posterior for HMM such that it's - P(S(1)) {P(S(2)|S(1))P(S(3)|S(2))…P(S(n)|S(n-1))} {P(W(1)|S(1))…P(W(n)|S(n))} where S is the state which in our case is the identified POS tag and W is the word in the sentence. <br><br>
+
+<b> Design Decisions - </b> We used 3 different dictionaries to store emission, transition and initial probabilities. We also used list of dictionaries to store the values of viterbi table that are calculated using dynamic programming approach. Then we backtracked on the table and returned the list of sequence of POS tags for each sentence <br>
 
 <br><br>
 
